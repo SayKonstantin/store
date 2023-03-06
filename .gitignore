@@ -1,0 +1,10 @@
+.dockerignore
+.env
+.idea
+venv
+.env.prod.db
+Dockerfile
+docker-compose.yml
+items/migrations
+uploads
+users/migrations
