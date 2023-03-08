@@ -1,0 +1,21 @@
+{% extends '../base.html' %}
+
+{% block title %}
+    {{ item.name }}
+{% endblock %}
+
+{% block content %}
+    <h2 style="margin-left: 50px">{{ item.name }}</h2>
+    <div style="width: 800px;">
+        <div>
+            <img style="margin-left: 30px" src="/media/{{ item.image }}" alt="">
+        </div>
+
+        <div style="margin-left: 90px">{{ item.price }}
+        </div>
+        <a style="margin-left: 65px" href="#" class="btn btn-primary">В корзину</a>
+        <div style="margin-left: 90px">{{ item.get_color_display }}
+        <div style="margin-left: 100px">{{ item.description }}</div>
+    </div>
+
+{% endblock %} }}

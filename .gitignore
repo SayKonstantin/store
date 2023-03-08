@@ -1,10 +1,12 @@
 .dockerignore
 .env
+.env_db
+.env.prod.db
+.env.prod
 .idea
 venv
-.env.prod.db
-Dockerfile
+
+app/Dockerfile
 docker-compose.yml
-items/migrations
-uploads
-users/migrations
+app/items/migrations
+app/users/migrations

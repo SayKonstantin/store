@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+{% block title %}
+    {{ user }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="card" style="width: 20rem;">
+
+        <img class="card-img-top" src="/media/site/inspector_gadget.jpeg" alt="Card image cap">
+
+        <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ user.email }}</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Сменить пароль</a>
+            <a href="#" class="card-link">Сменить email</a>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

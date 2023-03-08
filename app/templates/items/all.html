@@ -1,0 +1,22 @@
+{% extends '../base.html' %}
+
+{% block title %}
+    Все товары
+{% endblock %}
+
+{% block content %}
+    {% for item in items %}
+        <div class="card" style="display: inline-block; width: 20rem;">
+            <img src="/media/{{ item.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="/detail/{{ item.url }}">{{ item.name }}</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.price }} Р</h6>
+                <a href="#" class="btn btn-primary">В корзину</a>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:"4" %}
+            <br>
+        {% endif %}
+
+    {% endfor %}
+{% endblock %}
