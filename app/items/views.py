@@ -7,8 +7,19 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
-def home(request):
-    return render(request, 'users/main.html')#'users/../templates/users/main.html')
+# def home(request):
+#
+#     return render(request, 'users/main.html')
+
+class MainView(ListView):
+    model = Item
+    template_name = 'users/main.html'
+    context_object_name = 'sales'
+
+    def get_queryset(self):
+        return Item.objects.order_by('-discount')[:3]
+
+
 
 
 
@@ -22,6 +33,7 @@ class NewsView(ListView):
     model = Post
     template_name = 'items/news.html'
     context_object_name = 'news'
+
 
 
 
@@ -64,9 +76,9 @@ class NotesView(AllItemsView):
 
 class DetailItem(DetailView):
     template_name = 'items/detail_item.html'
-    model = Post
-    slug_field = 'url'
-    slug_url_kwarg = 'url'
+    model = Item
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
 
 
 class PostView(DetailView):

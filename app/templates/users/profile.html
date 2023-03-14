@@ -1,4 +1,5 @@
-{% extends '../base.html' %}
+{% extends 'base1.html' %}
+{% load static %}
 {% block title %}
     {{ user }}
 {% endblock %}
@@ -7,7 +8,7 @@
 
     <div class="card" style="width: 20rem;">
 
-        <img class="card-img-top" src="/media/site/inspector_gadget.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="{%  static 'site/inspector_gadget.jpeg'%}" alt="Card image cap">
 
         <div class="card-body">
             <h5 class="card-title">{{ user.username }}</h5>

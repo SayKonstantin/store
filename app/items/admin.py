@@ -13,6 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('name',)}
 
 
+
 @admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'url')
@@ -22,9 +23,9 @@ class SubCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'subcategory', 'price', 'amount', 'color', 'get_image')
-    list_display_links = ('name',)
-    prepopulated_fields = {'url': ('name',)}
+    list_display = ('name', 'subcategory', 'discount', 'price', 'amount', 'color', 'get_image')
+    search_fields = ('name',)
+    prepopulated_fields = {'slug': ('name',)}
     readonly_fields = ('get_image',)
 
     def get_image(self, obj):

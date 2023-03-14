@@ -1,4 +1,5 @@
-{% extends '../base.html' %}
+{% extends 'base1.html' %}
+{% load static %}
 {% block title %}
     О нас
 {% endblock %}
@@ -9,7 +10,7 @@
         <div id="carouselExample" class="carousel slide" style="max-width: 700px">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/media/site/респешн.jpeg" style="max-width: 900px" class="d-block w-100" alt="...">
+                    <img src="{% static 'site/респешн.jpeg' %}" style="max-width: 900px" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="/media/site/iphones.jpeg" style="max-width: 900px" class="d-block w-100" alt="...">

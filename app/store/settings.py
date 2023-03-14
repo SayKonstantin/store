@@ -14,26 +14,23 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = int(os.getenv('DEBUG', default=0))
-ALLOWED_HOSTS = ['localhost']
+# SECRET_KEY = os.getenv('SECRET_KEY')
+# DEBUG = int(os.getenv('DEBUG', default=0))
+# ALLOWED_HOSTS = ['localhost']
 # os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 # [os.getenv('DJANGO_ALLOWED_HOSTS')]
 
-# SECRET_KEY = 'foo'
-# DEBUG = True
-# ALLOWED_HOSTS = []
+SECRET_KEY = 'foo'
+DEBUG = 1
+ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/'
@@ -70,7 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'items', 'users'
+    'items', 'users',
 ]
 
 MIDDLEWARE = [
@@ -129,23 +126,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
-
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'ru-Ru'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/staticfiles/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'staticfiles'),)
 
-MEDIA_URL = '/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
